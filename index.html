@@ -199,6 +199,21 @@
     .sticky-cta span{display:none;}
     .sticky-cta{justify-content:center;}
   }
+
+  /* Kakao float button */
+  .kakao-float{
+    position:fixed;right:24px;bottom:96px;z-index:98;
+    width:56px;height:56px;border-radius:50%;
+    background:#FEE500;color:#191919;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:800;line-height:1.2;text-align:center;
+    box-shadow:0 4px 14px rgba(0,0,0,0.4);
+    transition:transform .15s ease;
+  }
+  .kakao-float:hover{transform:scale(1.08);}
+  @media(max-width:560px){
+    .kakao-float{bottom:84px;right:16px;width:48px;height:48px;font-size:11px;}
+  }
 </style>
 </head>
 <body>
@@ -439,11 +454,13 @@
       <div class="fbrand">펀라이프</div>
       <div>스마트스토어 · 리셀 · AI 부업 전자책 &copy; 2026 FunLife Academy</div>
       <div style="margin-top:10px;">펀라이프 아카데미 · 대구시 동구 경안로 825 2F</div>
-      <div>전화 010-9857-3003</div>
+      <div>전화 010-9857-3003 · <a href="http://pf.kakao.com/_xaKuSX/chat" target="_blank" rel="noopener" style="color:var(--accent-soft);">카카오톡 채널 문의</a></div>
     </div>
     <div>모든 상품의 결제·다운로드·환불은 래피드(Latpeed) 판매 페이지에서 진행됩니다.</div>
   </div>
 </footer>
+
+<a class="kakao-float" href="http://pf.kakao.com/_xaKuSX/chat" target="_blank" rel="noopener" aria-label="카카오톡 문의">카톡<br>문의</a>
 
 <div class="sticky-cta">
   <span>지금 필요한 전자책부터 <b>바로 시작</b>하세요</span>
