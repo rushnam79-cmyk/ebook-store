@@ -218,15 +218,31 @@
   .card{
     background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;
     display:flex;flex-direction:column;
-    transition:transform .2s ease, border-color .2s ease;
+    transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s cubic-bezier(.16,1,.3,1), border-color .3s ease;
   }
-  .card:hover{transform:translateY(-4px);border-color:var(--accent);}
+  .card:hover{
+    transform:translateY(-8px);
+    border-color:var(--accent);
+    box-shadow:0 24px 48px -16px rgba(0,0,0,.55), 0 0 0 1px rgba(230,57,70,.12);
+  }
   .cover{
     height:170px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;
-    color:#fff;position:relative;
+    color:#fff;position:relative;overflow:hidden;
   }
+  .cover::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(115deg, transparent 25%, rgba(255,255,255,.22) 40%, transparent 55%);
+    transform:translateX(-120%);
+    transition:transform .9s cubic-bezier(.16,1,.3,1);
+    pointer-events:none;
+  }
+  .card:hover .cover::before{transform:translateX(120%);}
   .cover .tag{font-size:12px;font-weight:700;opacity:0.85;margin-bottom:6px;}
-  .cover .ctitle{font-size:19px;font-weight:800;line-height:1.35;}
+  .cover .ctitle{
+    font-size:19px;font-weight:800;line-height:1.35;
+    transition:transform .45s cubic-bezier(.16,1,.3,1);
+  }
+  .card:hover .cover .ctitle{transform:translateY(-3px);}
   .cover.c1{background:linear-gradient(135deg,#3a1c71,#d76d77);}
   .cover.c2{background:linear-gradient(135deg,#0f2027,#2c5364);}
   .cover.c3{background:linear-gradient(135deg,#e63946,#ff8a65);}
@@ -259,9 +275,12 @@
   .buy-btn{
     display:block;text-align:center;background:var(--accent);color:#fff;font-weight:700;
     padding:12px;border-radius:8px;font-size:14px;margin-top:4px;
-    transition:background .15s ease;
+    transition:background .25s ease, transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease;
   }
-  .buy-btn:hover{background:var(--accent-soft);}
+  .buy-btn:hover{
+    background:var(--accent-soft);transform:translateY(-2px);
+    box-shadow:0 8px 20px -6px rgba(230,57,70,.55);
+  }
 
   /* bundle highlight */
   .bundle{
