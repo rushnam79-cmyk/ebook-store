@@ -122,6 +122,11 @@
     transition:opacity .6s ease;
   }
   #intro-video{width:100%;height:100%;object-fit:cover;display:block;}
+  /* 영상은 16:9 원본 — 세로(휴대폰) 화면에선 cover로 자르면 내용이 화면 밖으로
+     밀려나므로 전체 프레임이 보이게 contain으로 전환(레터박스는 배경색으로 채움) */
+  @media (max-aspect-ratio: 1/1){
+    #intro-video{object-fit:contain;}
+  }
   #intro-skip{
     position:absolute;right:24px;bottom:24px;z-index:1;
     background:rgba(20,20,24,0.55);border:1px solid rgba(255,255,255,0.25);
